@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Carousel } from "reactstrap";
+import { Carousel, CarouselCaption, CarouselItem, CarouselIndicators, CarouselControl } from "reactstrap";
 
 
 class Slider extends Component {
@@ -7,44 +7,84 @@ class Slider extends Component {
     render() {
 
         return (
-            <Carousel>
-                <Carousel.Item>
+            <Carousel
+                activeIndex={0}
+                next={function noRefCheck() { }}
+                previous={function noRefCheck() { }}
+            >
+                <CarouselIndicators
+                    activeIndex={0}
+                    items={[
+                        {
+                            altText: 'Slide 1',
+                            caption: 'Slide 1',
+                            key: 1,
+                            src: 'https://picsum.photos/id/123/1200/600'
+                        },
+                        {
+                            altText: 'Slide 2',
+                            caption: 'Slide 2',
+                            key: 2,
+                            src: 'https://picsum.photos/id/456/1200/600'
+                        },
+                        {
+                            altText: 'Slide 3',
+                            caption: 'Slide 3',
+                            key: 3,
+                            src: 'https://picsum.photos/id/678/1200/600'
+                        }
+                    ]}
+                    onClickHandler={function noRefCheck() { }}
+                />
+                <CarouselItem
+                    onExited={function noRefCheck() { }}
+                    onExiting={function noRefCheck() { }}
+                >
                     <img
-                        className="d-block w-100"
-                        src="holder.js/800x400?text=First slide&bg=373940"
-                        alt="First slide"
+                        alt="Slide 1"
+                        src="https://picsum.photos/id/123/1200/600"
                     />
-                    <Carousel.Caption>
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-
-                <Carousel.Item>
+                    <CarouselCaption
+                        captionHeader="Slide 1"
+                        captionText="Slide 1"
+                    />
+                </CarouselItem>
+                <CarouselItem
+                    onExited={function noRefCheck() { }}
+                    onExiting={function noRefCheck() { }}
+                >
                     <img
-                        className="d-block w-100"
-                        src="holder.js/800x400?text=Second slide&bg=282c34"
-                        alt="Second slide"
+                        alt="Slide 2"
+                        src="https://picsum.photos/id/456/1200/600"
                     />
-
-                    <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-
-                <Carousel.Item>
+                    <CarouselCaption
+                        captionHeader="Slide 2"
+                        captionText="Slide 2"
+                    />
+                </CarouselItem>
+                <CarouselItem
+                    onExited={function noRefCheck() { }}
+                    onExiting={function noRefCheck() { }}
+                >
                     <img
-                        className="d-block w-100"
-                        src="holder.js/800x400?text=Third slide&bg=20232a"
-                        alt="Third slide"
+                        alt="Slide 3"
+                        src="https://picsum.photos/id/678/1200/600"
                     />
-
-                    <Carousel.Caption>
-                        <h3>Third slide label</h3>
-                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
+                    <CarouselCaption
+                        captionHeader="Slide 3"
+                        captionText="Slide 3"
+                    />
+                </CarouselItem>
+                <CarouselControl
+                    direction="prev"
+                    directionText="Previous"
+                    onClickHandler={function noRefCheck() { }}
+                />
+                <CarouselControl
+                    direction="next"
+                    directionText="Next"
+                    onClickHandler={function noRefCheck() { }}
+                />
             </Carousel>
         )
 

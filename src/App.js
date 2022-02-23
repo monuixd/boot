@@ -1,12 +1,14 @@
 import Header from './components/Header';
-import HeroSlider from './components/Slider';
+//import HeroSlider from './components/Slider';
+import CardBox from './components/CardBox';
 
 function App() {
   return (
     <>
 
       <Header />
-      <HeroSlider />
+      {/* <HeroSlider /> */}
+      <CardBox />
 
     </>
 

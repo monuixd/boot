@@ -22,7 +22,7 @@ class Header extends Component {
             <Navbar
                 color="warning"
                 expand="md"
-                fixed="top"
+                //fixed="top"
                 light
             >
                 <NavbarBrand href="/">
