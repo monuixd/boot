@@ -36,6 +36,7 @@ class Slider extends Component {
                     ]}
                     onClickHandler={function noRefCheck() { }}
                 />
+
                 <CarouselItem
                     onExited={function noRefCheck() { }}
                     onExiting={function noRefCheck() { }}
@@ -49,6 +50,7 @@ class Slider extends Component {
                         captionText="Slide 1"
                     />
                 </CarouselItem>
+
                 <CarouselItem
                     onExited={function noRefCheck() { }}
                     onExiting={function noRefCheck() { }}
@@ -62,6 +64,7 @@ class Slider extends Component {
                         captionText="Slide 2"
                     />
                 </CarouselItem>
+
                 <CarouselItem
                     onExited={function noRefCheck() { }}
                     onExiting={function noRefCheck() { }}
@@ -75,6 +78,7 @@ class Slider extends Component {
                         captionText="Slide 3"
                     />
                 </CarouselItem>
+
                 <CarouselControl
                     direction="prev"
                     directionText="Previous"
@@ -85,6 +89,7 @@ class Slider extends Component {
                     directionText="Next"
                     onClickHandler={function noRefCheck() { }}
                 />
+
             </Carousel>
         )
 

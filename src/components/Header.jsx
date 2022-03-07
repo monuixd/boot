@@ -28,7 +28,9 @@ class Header extends Component {
                 <NavbarBrand href="/">
                     Reactstrap Pro+
                 </NavbarBrand>
+
                 <NavbarToggler onClick={function noRefCheck() { }} />
+
                 <Collapse navbar>
                     <Nav
                         className="me-auto"
@@ -39,11 +41,13 @@ class Header extends Component {
                                 Components
                             </NavLink>
                         </NavItem>
+
                         <NavItem>
                             <NavLink href="https://github.com/reactstrap/reactstrap">
                                 GitHub
                             </NavLink>
                         </NavItem>
+
                         <UncontrolledDropdown
                             inNavbar
                             nav
@@ -54,7 +58,7 @@ class Header extends Component {
                             >
                                 Options
                             </DropdownToggle>
-                            <DropdownMenu right>
+                            <DropdownMenu>
                                 <DropdownItem>
                                     Option 1
                                 </DropdownItem>
@@ -66,12 +70,15 @@ class Header extends Component {
                                     Reset
                                 </DropdownItem>
                             </DropdownMenu>
+
                         </UncontrolledDropdown>
                     </Nav>
+
                     <NavbarText>
                         Simple Text
                     </NavbarText>
                 </Collapse>
+
             </Navbar>
         )
 

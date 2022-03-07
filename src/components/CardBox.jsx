@@ -1,96 +1,60 @@
 import React, { Component } from "react";
-import { Row, Col, Card, CardColumns, CardImg, CardBody, CardTitle, CardSubtitle, CardText, Button } from "reactstrap";
+import { Row, Col, Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, Button, Container } from "reactstrap";
+
 
 class CardBox extends Component {
 
+
+
     render() {
+
+        const productsList = this.props.products
+        console.log("Props:", this.props)
         return (
 
-            <CardColumns>
-                <Row>
-                    <Col sm="4">
-                        <Card>
-                            <CardImg
-                                alt="Card image cap"
-                                src="https://picsum.photos/256/186"
-                                top
-                                width="100%"
-                            />
-                            <CardBody>
-                                <CardTitle tag="h5">
-                                    Card title
-                                </CardTitle>
-                                <CardSubtitle
-                                    className="mb-2 text-muted"
-                                    tag="h6"
-                                >
-                                    Card subtitle
-                                </CardSubtitle>
-                                <CardText>
-                                    This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                                </CardText>
-                                <Button>
-                                    Button
-                                </Button>
-                            </CardBody>
-                        </Card>
-                    </Col>
-                    <Col sm="4">
-                        <Card>
-                            <CardImg
-                                alt="Card image cap"
-                                src="https://picsum.photos/256/186"
-                                top
-                                width="100%"
-                            />
-                            <CardBody>
-                                <CardTitle tag="h5">
-                                    Card title
-                                </CardTitle>
-                                <CardSubtitle
-                                    className="mb-2 text-muted"
-                                    tag="h6"
-                                >
-                                    Card subtitle
-                                </CardSubtitle>
-                                <CardText>
-                                    This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                                </CardText>
-                                <Button>
-                                    Button
-                                </Button>
-                            </CardBody>
-                        </Card>
-                    </Col>
-                    <Col sm="4">
-                        <Card>
-                            <CardImg
-                                alt="Card image cap"
-                                src="https://picsum.photos/256/186"
-                                top
-                                width="100%"
-                            />
-                            <CardBody>
-                                <CardTitle tag="h5">
-                                    Card title
-                                </CardTitle>
-                                <CardSubtitle
-                                    className="mb-2 text-muted"
-                                    tag="h6"
-                                >
-                                    Card subtitle
-                                </CardSubtitle>
-                                <CardText>
-                                    This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                                </CardText>
-                                <Button>
-                                    Button
-                                </Button>
-                            </CardBody>
-                        </Card>
-                    </Col>
-                </Row>
-            </CardColumns>
+            <Container>
+                <h2>Category</h2>
+                {
+                    (this.props.loader) ?
+                        <div className="loader"></div>
+                        :
+                        <Row>
+                            {productsList.map((item, i) => {
+                                return (
+                                    <Col sm="3" key={i}>
+                                        <Card>
+                                            <CardImg
+                                                alt="Card image cap"
+                                                src={item.image}
+                                                top
+                                                width="100%"
+                                            />
+                                            <CardBody>
+                                                <CardTitle tag="h5">
+                                                    {item.title}
+                                                </CardTitle>
+                                                <CardSubtitle
+                                                    className="mb-2 text-muted"
+                                                    tag="h6"
+                                                >
+                                                    {item.category}
+                                                </CardSubtitle>
+                                                <CardText>
+                                                    {item.description}
+                                                </CardText>
+                                                <Button>
+                                                    Button
+                                                </Button>
+                                            </CardBody>
+                                        </Card>
+                                    </Col>
+                                )
+                            })}
+
+                        </Row>
+                }
+
+            </Container>
         )
     }
 }
