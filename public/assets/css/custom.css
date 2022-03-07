@@ -1,0 +1,8 @@
+.loader {
+    height: 100px;
+    width: 100px;
+    background: url(../images/loader.gif) no-repeat;
+    background-size: 100%;
+    border-radius: 50%;
+    margin: 50px auto;
+}
