@@ -1,89 +1,66 @@
 import React, { Component } from "react";
 import {
-    Navbar,
-    NavbarBrand,
-    NavbarToggler,
-    Collapse,
-    Nav,
-    NavItem,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
-    NavbarText
-} from 'reactstrap';
+  Navbar,
+  NavbarBrand,
+  NavbarToggler,
+  Collapse,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  NavbarText,
+} from "reactstrap";
 
 class Header extends Component {
+  render() {
+    console.log("PROP HHH", this.props.loader);
+    return (
+      <Navbar
+        color="warning"
+        expand="md"
+        //fixed="top"
+        light
+      >
+        <NavbarBrand href="/">Reactstrap Pro+</NavbarBrand>
 
-    render() {
+        <NavbarToggler onClick={function noRefCheck() {}} />
 
-        return (
-            <Navbar
-                color="warning"
-                expand="md"
-                //fixed="top"
-                light
-            >
-                <NavbarBrand href="/">
-                    Reactstrap Pro+
-                </NavbarBrand>
+        <Collapse navbar>
+          <Nav className="me-auto" navbar>
+            <NavItem>
+              <NavLink href="/components/">
+                Components
+                {this.props.loader ? this.props.loader : "Hello"}
+              </NavLink>
+            </NavItem>
 
-                <NavbarToggler onClick={function noRefCheck() { }} />
+            <NavItem>
+              <NavLink href="https://github.com/reactstrap/reactstrap">
+                GitHub
+              </NavLink>
+            </NavItem>
 
-                <Collapse navbar>
-                    <Nav
-                        className="me-auto"
-                        navbar
-                    >
-                        <NavItem>
-                            <NavLink href="/components/">
-                                Components
-                            </NavLink>
-                        </NavItem>
+            <UncontrolledDropdown inNavbar nav>
+              <DropdownToggle caret nav>
+                Options
+              </DropdownToggle>
+              <DropdownMenu>
+                <DropdownItem>Option 1</DropdownItem>
+                <DropdownItem>Option 2</DropdownItem>
+                <DropdownItem divider />
+                <DropdownItem>Reset</DropdownItem>
+              </DropdownMenu>
+            </UncontrolledDropdown>
+          </Nav>
 
-                        <NavItem>
-                            <NavLink href="https://github.com/reactstrap/reactstrap">
-                                GitHub
-                            </NavLink>
-                        </NavItem>
-
-                        <UncontrolledDropdown
-                            inNavbar
-                            nav
-                        >
-                            <DropdownToggle
-                                caret
-                                nav
-                            >
-                                Options
-                            </DropdownToggle>
-                            <DropdownMenu>
-                                <DropdownItem>
-                                    Option 1
-                                </DropdownItem>
-                                <DropdownItem>
-                                    Option 2
-                                </DropdownItem>
-                                <DropdownItem divider />
-                                <DropdownItem>
-                                    Reset
-                                </DropdownItem>
-                            </DropdownMenu>
-
-                        </UncontrolledDropdown>
-                    </Nav>
-
-                    <NavbarText>
-                        Simple Text
-                    </NavbarText>
-                </Collapse>
-
-            </Navbar>
-        )
-
-    }
-
+          <NavbarText>Simple Text</NavbarText>
+        </Collapse>
+      </Navbar>
+    );
+  }
 }
 
 export default Header;
