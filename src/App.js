@@ -1,14 +1,24 @@
+import React, {useState} from "react"
 import Header from './components/Header';
 //import HeroSlider from './components/Slider';
-import CardBox from './components/CardBox';
+import Home from './components/home';
 
 function App() {
+
+  const [prodList, setProdList] = useState([]);
+
+  const handelProList = (childData)=>{
+    console.log("childData",childData);
+    setProdList(childData);
+
+  }
+
   return (
     <>
 
-      <Header />
+      <Header loader={prodList.loader} />
       {/* <HeroSlider /> */}
-      <CardBox />
+      <Home fromParent={handelProList} />
 
     </>
 
